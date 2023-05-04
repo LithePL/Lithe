@@ -1,7 +1,7 @@
 NAMESPACE io.
 Append io.
 
-FUNCTION[[], UINT] Main.
+FUNCTION[[] UINT] Main.
   AUTO $args $body.
 
   $args :: [].
