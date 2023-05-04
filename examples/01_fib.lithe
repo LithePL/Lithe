@@ -1,0 +1,30 @@
+NAMESPACE io.
+Append io.
+
+const UINT N :: 10.
+
+
+FUNCTION[[UINT], UINT] Fib.
+  AUTO $args $properties $body.
+
+  $args :: ["n"].
+  $properties :: {recursive :: TRUE}.
+  $body begin
+    if #[n <= 1]
+      Return n.
+    else
+      Return #[fib #[n - 2] + fib #[n - 1]]. 
+  end.
+
+
+FUNCTION[[], UINT] Main.
+  AUTO $args $locals $body.
+
+  $args :: [].
+  $locals :: #{ITER[UINT] i}.
+  $body begin
+    it :: Iter #[Range 0 n 1].
+    it/map |i| -> #[PrintLn #[Fib i]].
+    it/run ().
+  end.
+

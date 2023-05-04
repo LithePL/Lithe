@@ -1,0 +1,10 @@
+NAMESPACE io.
+Append io.
+
+FUNCTION[[], UINT] Main.
+  AUTO $args $body.
+
+  $args :: [].
+  $body begin
+    PrintLn "Hello World!".
+  end.

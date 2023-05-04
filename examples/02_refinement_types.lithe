@@ -1,0 +1,34 @@
+NAMESPACE seqkit.
+Append seqkit.
+
+TYPE POSITIVE_INT.
+  AUTO $defset.
+
+  ~~ Same definition set as UINT but without 0 ~~
+  $defset :: #[UINT/defset \ {0}].
+
+
+TYPE HALVES.
+  AUTO $defset.
+
+  ~~:
+    Refinement types are very powerful. In this example, we are
+    making a type that resembles INT, but the gap between the values
+    are 0.5 instead of 1.
+
+    The two first `NULL` mean that we are preserving the bounds.
+    In other words, ranging from -inf to +inf, with a step of 0.5.
+  :~~
+  $defset :: #[Slice REAL/defset NULL NULL 0.5].
+
+
+~~ The following type was brought to you by ChatGPT! ~~
+TYPE TENTHS.
+  AUTO $defset.
+
+  ~~:
+    This type resembles INT, but the gap between the values is 0.1.
+    The two first `NULL` mean that we are preserving the bounds,
+    ranging from -inf to +inf, with a step of 0.1.
+  :~~
+  $defset :: #[Slice REAL/defset NULL NULL 0.1].
