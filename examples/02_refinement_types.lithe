@@ -19,7 +19,7 @@ TYPE HALVES.
     The two first `NULL` mean that we are preserving the bounds.
     In other words, ranging from -inf to +inf, with a step of 0.5.
   :~~
-  $defset :: #[Slice REAL/defset NULL NULL 0.5].
+  $defset :: #[Slice REAL/defset NULL NULL 0f5].
 
 
 ~~ The following type was brought to you by ChatGPT! ~~
@@ -31,4 +31,4 @@ TYPE TENTHS.
     The two first `NULL` mean that we are preserving the bounds,
     ranging from -inf to +inf, with a step of 0.1.
   :~~
-  $defset :: #[Slice REAL/defset NULL NULL 0.1].
+  $defset :: #[Slice REAL/defset NULL NULL 0f1].

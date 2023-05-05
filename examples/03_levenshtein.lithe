@@ -1,18 +1,20 @@
-NAMESPACE io iterkit matrix.
+NAMESPACE io iterkit math.
 
 Append io.
 Append iterkit.
 Append math.
 
 FUNCTION[[UINT UINT], ARRAY[2][UINT]] DistanceMatrix.
-  AUTO $args $body.
+  AUTO $args $locals $body.
 
   $args :: ["rows" "cols"].
-  $locals :: #{
+
+  $locals begin
     ARRAY[2][UINT] distances.
     ITER[(UINT, UINT)] it.
     UINT i j.
-  }.
+  end.
+
   $body begin
     distances :: ARRAY[2]/zeros #[rows + 1] #[cols + 1].
 
@@ -24,7 +26,7 @@ FUNCTION[[UINT UINT], ARRAY[2][UINT]] DistanceMatrix.
     ].
     it/run ().
 
-    Return distances.
+    return distances.
   end.
 
 

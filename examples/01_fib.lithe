@@ -9,11 +9,12 @@ FUNCTION[[UINT] UINT] Fib.
 
   $args :: ["n"].
   $properties :: {recursive :: TRUE}.
+
   $body begin
     if #[n <= 1]
-      Return n.
+      return n.
     else
-      Return #[fib #[n - 2] + fib #[n - 1]]. 
+      return #[fib #[n - 2] + fib #[n - 1]]. 
   end.
 
 
@@ -21,7 +22,11 @@ FUNCTION[[] UINT] Main.
   AUTO $args $locals $body.
 
   $args :: [].
-  $locals :: #{ITER[UINT] i.}.
+
+  $locals begin
+    ITER[UINT] i.
+  end.
+
   $body begin
     it :: Iter #[Range 0 n 1].
     it/map |i| -> #[PrintLn #[Fib i]].
