@@ -1,0 +1,35 @@
+NAMESPACE dbgkit.
+
+Append dbgkit.
+
+
+RECORD Person *Debug.
+  AUTO $fields $Debug.
+
+  $fields begin
+    TEXT firstname.
+    TEXT lastname.
+    UINT age.
+  end.
+
+
+TYPE PERSON *Debug.
+  AUTO $record $Debug.
+
+  ~~ `record` is another way to build a type. ~~
+  $record :: Person.
+
+
+FUNCTION[[] UINT] Main.
+  AUTO $args $body.
+
+  $args :: [].
+
+  $locals begin
+    PERSON Doe.
+  end.
+
+  $body begin
+    Doe :: new PERSON #("John" "Doe" 27).
+    Debug Doe.  ~~ will print `Doe: PERSON("John" "Doe" 27)`
+  end.
