@@ -30,6 +30,6 @@ FUNCTION[[] UINT] Main.
   end.
 
   $body begin
-    Doe :: new PERSON #("John" "Doe" 27).
-    Debug Doe.  ~~ will print `Doe: PERSON("John" "Doe" 27)`
+    doe :: new PERSON #("John" "Doe" 27).
+    Debug doe.  ~~ will print `Doe: PERSON("John" "Doe" 27)`
   end.
