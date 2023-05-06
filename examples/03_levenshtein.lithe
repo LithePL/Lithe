@@ -16,15 +16,15 @@ FUNCTION[[UINT UINT], ARRAY[2][UINT]] DistanceMatrix.
   end.
 
   $body begin
-    distances :: ARRAY[2]/zeros #[rows + 1] #[cols + 1].
+    distances :: ARRAY[2]/Zeros #[rows + 1] #[cols + 1].
 
-    it :: Iter #[Zip #[distances/rows ()] #[distances/cols ()]].
-    it/map |ij| -> #[
+    it :: Iter #[Zip #[distances/Rows ()] #[distances/Cols ()]].
+    it/Map |ij| -> #[
       i j :: ij.
       distances[i][0] :: i.
       distances[0][j] :: j.
     ].
-    it/run ().
+    it/Run ().
 
     return distances.
   end.

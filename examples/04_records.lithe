@@ -1,5 +1,4 @@
 NAMESPACE dbgkit.
-
 Append dbgkit.
 
 
@@ -30,6 +29,6 @@ FUNCTION[[] UINT] Main.
   end.
 
   $body begin
-    doe :: new PERSON #("John" "Doe" 27).
+    doe :: New PERSON #("John" "Doe" 27).
     Debug doe.  ~~ will print `Doe: PERSON("John" "Doe" 27)`
   end.
